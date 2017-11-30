@@ -3,37 +3,25 @@ import "./App.css";
 import WeatherDisplay from "./WeatherDisplay.js";
 import SearchBar from "./SearchBar.js";
 
-
-
-
-const PLACES = [
-  { name: "saint petersburg", zip: "" } // !!!!!Сюда вставить полученный город
-];
-
-
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      activePlace: 0
+      icity: "saint petersburg"
     };
   }
+  handleChangeCity(CityItem) {
+    this.setState({ icity: CityItem });
+  }
   render() {
-    const activePlace = this.state.activePlace;
     return (
-	
-// !!!!Связать WeatherDisplay и SearchBar через redux(новый файл)
-	
-	
       <div className="App">
-	  
-	  <SearchBar />
-	  
-      <WeatherDisplay key={activePlace} zip={PLACES[activePlace].name} />
-		
-		
-		
+        <SearchBar
+          value={this.state.icity}
+          onChangeCity={this.handleChangeCity.bind(this)}
+        />
+
+        <WeatherDisplay zip={this.state.icity} />
       </div>
     );
   }

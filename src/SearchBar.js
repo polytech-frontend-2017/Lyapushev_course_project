@@ -1,70 +1,45 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class SearchBar extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      city: ''
+      value: props.value
+    };
+    this.handleChangeCity = this.handleChangeCity.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value !== this.props.value) {
+      this.setState({
+        value: nextProps.value
+      });
     }
   }
-  
 
-  handleSearch (e) {
-   // this.setState({ city: e.target.value })
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.onChangeCity(this.state.value);
   }
-
-  handleGoClick (e) {
-   this.setState({city :  e.target.previousSibling.value})
-   
+  handleChangeCity(event) {
+    this.setState({ value: event.target.value });
   }
-
-  render () {
-	  
-	  
-	  
-	  
-	  
-	  
+  render() {
     return (
-      <div className='searchbar-container'>
-        <form onSubmit={e => e.preventDefault()}>
-          
-		  
-		  
-		  
-		  <input
-            type='text'
-            size='45'
-            placeholder='City'
-            //onChange={this.handleSearch.bind(this)}
-            //value={this.state.city}
-			
-			ref ='author'
-			/>
-			
-			
-			
-          <button
-            type='submit'
-            onClick={this.handleGoClick.bind(this)}>
-            Go!
-          </button>
-		  
-		  
-		 
-		  <p>{this.state.city}</p>
-		  
-		  
+      <div className="searchbar-container">
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            size="55"
+            placeholder="City"
+            onChange={this.handleChangeCity}
+            value={this.state.value}
+          />
+
+          <button type="submit">Go!</button>
         </form>
-	
       </div>
-	  
-	  
-	 
-    )
-	
-	
-	
+    );
   }
 }
 

@@ -23,30 +23,31 @@
 }
 
 .block {
-	width: 85px;
-	display: table-cell;
-	padding: 1.5em 0 0 0;
-	text-align: center;
+  width: 85px;
+  display: table-cell;
+  padding: 1.5em 0 0 0;
+  text-align: center;
 }
 
 .forecast {
-	
-	display: table;
-	margin: 0 auto;
-	
+  display: table;
+  margin: 0 auto;
 }
 
 .temp {
-	font-weight: 300;
-	margin: 0.25em 0;
+  font-weight: 300;
+  margin: 0.25em 0;
 }
 
 .day {
-	opacity: 0.7;
-
+  opacity: 0.7;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
