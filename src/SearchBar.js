@@ -30,7 +30,7 @@ class SearchBar extends Component {
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            size="55"
+            size="56"
             placeholder="City"
             onChange={this.handleChangeCity}
             value={this.state.value}
