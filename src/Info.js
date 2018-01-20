@@ -21,14 +21,14 @@ class ToggleBox extends Component {
     const { opened } = this.state;
     return (
       <div role="banner" className="box" id="box">
-        <div
+        <button
           role="textbox"
           className="boxTitle"
           id="boxTitle"
           onClick={this.toggleBox}
         >
           {title}
-        </div>
+        </button>
         {opened &&
           children && (
             <div role="Note" className="boxContent" id="boxContent">

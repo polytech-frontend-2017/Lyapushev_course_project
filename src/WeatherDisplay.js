@@ -75,12 +75,12 @@ class WeatherDisplay extends Component {
 
   render() {
     let weatherDataDay = this.state.weatherDataDay;
-
+	
     let weatherData = this.state.weatherData;
 
     if (!weatherData || !weatherDataDay) return <div>Loading</div>;
 
-    if (weatherData.cod == 404 || weatherDataDay.cod == 404)
+    if (weatherData.cod == 404 || weatherDataDay.cod == 404 || weatherData.cod == 400 || weatherDataDay.cod == 400 )
       return <h1 className="head">City not found</h1>;
 
     let weather = weatherData.weather[0];

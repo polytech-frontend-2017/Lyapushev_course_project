@@ -70,7 +70,7 @@ class SearchBar extends Component {
                   {item.label}
                 </div>
               )}
-              inputProps={{ placeholder: "City" }}
+              inputProps={{ placeholder: "City" , className: "search-input"}}
               value={this.state.value}
               onChange={this.handleChangeCity}
               onSelect={value => this.setState({ value })}
